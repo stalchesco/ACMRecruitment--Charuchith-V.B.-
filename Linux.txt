@@ -1,0 +1,196 @@
+LINUX
+
+
+Level-0
+
+
+Logged into the bandit0 on Linux command line using ssh on port 220
+Used ls command to display all files in home directory and found readme file
+cat command was used to display contents of file and found password
+
+
+
+Level-1
+
+
+Logged into bandit1 using the password from bandit0
+using ls command found dashed filename
+dash will show an error when we use cat with it so used cat./- to display contents of the file.
+
+
+Level-2
+
+
+Logged into bandit2 
+Used command cat spaces in this filename, it will accept each word as a separate filename and raise errors to avoid that, put filename in quote cat "spaces in this filename"
+
+
+LEVEL-3
+
+Logged into bandit3
+Changed directory to inhere by using cd inhere
+used ls command to display files and it returned nothing, so used ls-a command to display hidden files
+displays file named"...Hiding-From-You"
+and found password
+
+Level-4
+
+Logged into bandit4
+changed directory to inhere using cd inhere
+using command find./*,found that only-file07 has password in human-readable form
+used cat./-file07 to reveal password
+
+Level-5
+
+Logged into bandit5
+used find command to sort through all 'maybehere' files with given specifications 
+find ./-size1033c -readable ! -executable and found that file 2 in maybehere07 had the password
+
+Level-6
+
+Logged into bandit6
+again, used find command to sort through files with given specifications 
+find./ -size33c -user bandit7 -group bandit6
+
+Level-7
+
+Logged into bandit7
+used cat data.txt and messed up the terminal
+usedgrep keyword to find the line and corresponding password
+cat data.txt | grep"millionth"
+
+
+Level-8
+
+
+Logged into bandit8
+used sort data.txt to sort all contents in ascending order and displayed all duplicate files together
+used uniq command to section out the unique lines and give count of lines and found the password that occurs only once
+sort data.txt|uniq -c
+Level-9
+
+
+Logged into bandit9
+Used strings command to display all strings in file and grep to sort out lines containing=
+strings data.txt | grep =
+
+
+Level-10
+
+
+Logged into bandit10
+Used base64 to decode contents of file and got the password
+base64-d data.txt
+
+Level-11
+
+
+Logged into bandit11
+Opened data.txt file using cat
+Used cat data.txt | tr A-Za-z N-ZA-Mn-za-m
+The above command rotates uppercase letters upto 13 th letter which is N and the same with the lowercase and we get the translates final password
+
+
+Level-12
+
+
+Logged into bandit 12
+Accessed data.txt
+created a new folder charu in the directory tmp by using mkdr /tmp/charu
+copied data of data.txt to charu using cp data.txt /tmp/charu
+Checked the format of the file and it was found to be ASCII
+decompressed using xxd -r data.txt data1
+checked the format and it was found to be gzip compressed
+moved data1 to data2.gz by using mv data1 data2.gz
+decompressed by using gzip -d data2.gz
+found the format of d2 to be bzip2
+moved data2 to data3.bz2
+decompressed bzip2 file by using bzip2 -d data3.bz2
+found the format of data3 to be gzip combressed
+decompressed the file 
+format of data3 was found to be gzip compressed
+moved the data of the file to data4.gz
+decompressed gzip file
+found format of file 4 to be tar
+using command -xvf data4
+we got data5.bin
+format of data5.bin-tar
+again decompressed and we got data6.bin
+format of data6.bin - bzip2
+moved data6.bin data to data7.bz2
+decompressed data7.bz2
+found format of data7 to be tar
+decompressed data7 and found data8.bin
+found format of data8.bin to be gzip
+moved data8.bin to data9.gz
+decompressed data9.gz 
+found format of data9 to be ASCII
+opened data9 by cat data9 to reveal the password
+
+
+Level-13
+
+There was no password but a private ssh key
+Logged into bandit 14 using ssh -i sshkey.private bandit14@ localhost -p 2220
+ 
+
+Level-14
+
+
+Logged into bandit 14
+In the question the path for the password is given which we must get in by using the previous level's local host
+Retrived a password by using the path cat /etc/bandit_pass/bandit14
+Changes port using telnet command and gave recently acquired password
+which gave the password for bandit15 using previously found password
+
+
+Level -15
+
+
+Connected to an encrypted port through local host using ncat --ssl localhost 3001
+Gave password of bandit 15 and got password of bandit 16
+
+Level-16
+
+Logged into bandit16
+used nmap command to sort through ports 31000-32000 to see which of them support sll
+found that port 31518 and 31790 supports ssl but 31518 runs only echo
+used ncat --ssl to connect to port 31790
+copied and pasted rsa private key into file key1 and changed permissions by using chmod
+
+LEVEL-17
+
+logged into bandit17 by using key1 from previous level
+In bandit17
+using ls command found passwords.new and passwords.old present in it
+using command diff passwords.new passwords.old we found the one line that has been changed
+hence found the password for the next level
+
+Level-18
+
+Logged into bandit 18 and we got the bye bye as mentioned in the question of level 17 to level 18
+we are getting logged out of the level 18 as soon as we enter the password for it, so we enter a command along with the ssh key command which is used to login to level 18.
+Its in the readme file as mentioned in the question we will type the command cat readme at the end of the ssh command
+the password for level 18 and logging in we get the password for level 19 and we are again kicked out
+
+Level-19
+
+Logged into level 19
+we find the file bandit20-do in the homedirectory
+found that it has a setuid which means that when we run it we will have the same permissions as the user
+using the command ./bandit20-do we became bandit 20
+By using ./bandit20-do  cat /etc/bandit_pass/bandit20. We got the password for level 20
+
+Level -20
+Logged into bandit 20 using the password: 0qXahG8ZjOVMN9Ghs7iOWsCfZyXOUbYO
+
+
+
+
+
+
+
+
+
+
+
