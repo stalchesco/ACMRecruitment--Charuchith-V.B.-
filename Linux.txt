@@ -50,7 +50,8 @@ Level-6
 
 Logged into bandit6
 again, used find command to sort through files with given specifications 
-find./ -size33c -user bandit7 -group bandit6
+find / -size33c -user bandit7 -group bandit6
+only / needed to find something hidden on server.
 
 Level-7
 
