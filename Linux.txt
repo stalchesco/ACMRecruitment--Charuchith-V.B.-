@@ -113,7 +113,7 @@ format of data3 was found to be gzip compressed
 moved the data of the file to data4.gz
 decompressed gzip file
 found format of file 4 to be tar
-using command -xvf data4
+using command tar -xf data4
 we got data5.bin
 format of data5.bin-tar
 again decompressed and we got data6.bin
